@@ -102,7 +102,17 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CortanaFunctions.cs" />
+    <Compile Include="CortanaFunctions.Cmd_SendPushover.cs" />
+    <Compile Include="CortanaFunctions.Cmd_SendMQTT.cs" />
+    <Compile Include="CortanaFunctions.Cmd_RunScript.cs" />
+    <Compile Include="CortanaFunctions.Cmd_RestApiPost.cs" />
+    <Compile Include="CortanaFunctions.Cmd_SendSerialData.cs" />
+    <Compile Include="CortanaFunctions.Cmd_CreateFile.cs" />
+    <Compile Include="CortanaFunctions.Cmd_OpenFile.cs" />
+    <Compile Include="CortanaFunctions.Cmd_OpenWebsite.cs" />
+    <Compile Include="CortanaFunctions.props.cs" />
+    <Compile Include="CortanaFunctions.props.vcdLookup.cs" />
+    <Compile Include="CortanaFunctions.utils.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
