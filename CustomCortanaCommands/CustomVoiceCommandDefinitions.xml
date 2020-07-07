@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
-  <CommandSet xml:lang="en-us" Name="CustomCommands">
+  <CommandSet xml:lang="en-us" Name="CortanaCustomCommands_en-us">
     <CommandPrefix> Listen Up </CommandPrefix>
     <Example> Open File, Open Website </Example>
 
@@ -20,18 +20,9 @@
       <Navigate/>
     </Command>
 
-    <PhraseList Label="MQTT_device">
-      <Item> Galaxy </Item>
-      <Item> Nexus </Item>
-    </PhraseList>
-
-    <PhraseTopic Label="free_form_text" Scenario="Natural Language">
-      <Subject> Natural Language </Subject>
-    </PhraseTopic>
-
     <Command Name="SendMQTT">
       <Example> Tell device action </Example>
-      <ListenFor> Tell {MQTT_device} {free_form_text} </ListenFor>
+      <ListenFor> Tell {MQTT_device} [to] {MQTT_command} </ListenFor>
       <Feedback> Sending </Feedback>
       <Navigate/>
     </Command>
@@ -63,6 +54,25 @@
       <Feedback> Sending serial data </Feedback>
       <Navigate/>
     </Command>
+
+    <PhraseList Label="MQTT_device">
+      <Item> Galaxy </Item>
+      <Item> Nexus </Item>
+    </PhraseList>
+
+    <PhraseList Label="MQTT_command">
+      <Item>Play</Item>
+      <Item>Pause</Item>
+      <Item>Stop</Item>
+      <Item>Resume</Item>
+      <Item>Continue</Item>
+      <Item>Volume Up</Item>
+      <Item>Volume Down</Item>
+    </PhraseList>
+
+    <PhraseTopic Label="free_form_text" Scenario="Natural Language">
+      <Subject> Natural Language </Subject>
+    </PhraseTopic>
 
   </CommandSet>
 

@@ -11,7 +11,7 @@ namespace CustomCortanaCommands
         public static async void Cmd_SendMQTT()
         {
             string device = CortanaFunctions.GetSlotData("MQTT_device");
-            string message = CortanaFunctions.GetSlotData("free_form_text");
+            string message = CortanaFunctions.GetSlotData("MQTT_Command");
 
             try
             {
