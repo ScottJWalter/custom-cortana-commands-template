@@ -2,18 +2,42 @@
 
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
   <CommandSet xml:lang="en-us" Name="CustomCommands">
-   <CommandPrefix> Listen Up </CommandPrefix>
+    <CommandPrefix> Listen Up </CommandPrefix>
     <Example> Open File, Open Website </Example>
 
     <Command Name="OpenWebsite">
       <Example> Open website </Example>
-      <ListenFor> Open website </ListenFor>
+      <ListenFor> Open website {free_form_text} </ListenFor>
       <Feedback> Opening your website </Feedback>
       <Navigate/>
     </Command>
 
+    <Command Name="RunScript">
+      <Example> Initiate Debug Mode </Example>
+      <ListenFor> Initiate {free_form_text} </ListenFor>
+      <ListenFor> Launch {free_form_text} </ListenFor>
+      <Feedback> Initiating {free_form_text} </Feedback>
+      <Navigate/>
+    </Command>
+
+    <PhraseList Label="MQTT_device">
+      <Item> Galaxy </Item>
+      <Item> Nexus </Item>
+    </PhraseList>
+
+    <PhraseTopic Label="free_form_text" Scenario="Natural Language">
+      <Subject> Natural Language </Subject>
+    </PhraseTopic>
+
+    <Command Name="SendMQTT">
+      <Example> Tell device action </Example>
+      <ListenFor> Tell {MQTT_device} {free_form_text} </ListenFor>
+      <Feedback> Sending </Feedback>
+      <Navigate/>
+    </Command>
+
     <Command Name="PushIt">
-      <Example> PushIt </Example>
+      <Example> Send Push </Example>
       <ListenFor> Send Push </ListenFor>
       <Feedback> Sending Pushover notification </Feedback>
       <Navigate/>
